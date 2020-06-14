@@ -1,0 +1,23 @@
+{
+  "name": "sbooker/litgroup-enumerable-normalizer",
+  "description": "LitGroup Enumerable normalizer",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^7.3",
+    "litgroup/enumerable": "^0.7",
+    "symfony/serializer": "^5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sbooker\\LitGroupEnumerable\\Normalizer\\": "src/"
+    }
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  }
+}
