@@ -6,7 +6,7 @@
 [![Total Downloads][badge-downloads]][downloads]
 
 The sbooker/litgroup-enumerable-normalizer package provides the ability to normalize/denormalize 
-[litgroup-enumerable][litgroup-enumerable] with [Symfony serializer][symfony-serializer].
+[litgroup/enumerable][litgroup-enumerable] with [Symfony serializer][symfony-serializer].
 
 ## Installation
 

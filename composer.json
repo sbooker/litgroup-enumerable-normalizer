@@ -5,8 +5,8 @@
   "license": "MIT",
   "minimum-stability": "stable",
   "require": {
-    "php": "^7.3",
-    "litgroup/enumerable": "^0.7",
+    "php": "^7.3 || ^8.0",
+    "litgroup/enumerable": "^0.8",
     "symfony/serializer": "^5.1"
   },
   "autoload": {
