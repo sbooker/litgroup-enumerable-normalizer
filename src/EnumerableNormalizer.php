@@ -10,7 +10,7 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 final class EnumerableNormalizer implements NormalizerInterface, DenormalizerInterface
 {
-    public function normalize($object, string $format = null, array $context = [])
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
         if (!$this->supportsNormalization($object)) {
             throw new \RuntimeException('Supports  only ' . Enumerable::class . ' normalization.');
@@ -19,18 +19,18 @@ final class EnumerableNormalizer implements NormalizerInterface, DenormalizerInt
         return $object->getRawValue();
     }
 
-    public function supportsNormalization($data, string $format = null)
+    public function supportsNormalization(mixed $data, string $format = null): bool
     {
         return $data instanceof Enumerable;
     }
 
-    public function denormalize($data, string $type, string $format = null, array $context = [])
+    public function denormalize(mixed $data, string $type, string $format = null, array $context = []): Enumerable
     {
         /** @var Enumerable $type */
         return $type::getValueOf($data);
     }
 
-    public function supportsDenormalization($data, string $type, string $format = null)
+    public function supportsDenormalization(mixed $data, string $type, string $format = null): bool
     {
         return is_a($type, Enumerable::class, true) && $this->isValid($type, $data);
     }
