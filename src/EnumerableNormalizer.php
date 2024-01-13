@@ -19,7 +19,7 @@ final class EnumerableNormalizer implements NormalizerInterface, DenormalizerInt
         return $object->getRawValue();
     }
 
-    public function supportsNormalization(mixed $data, string $format = null): bool
+    public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
     {
         return $data instanceof Enumerable;
     }
@@ -30,7 +30,7 @@ final class EnumerableNormalizer implements NormalizerInterface, DenormalizerInt
         return $type::getValueOf($data);
     }
 
-    public function supportsDenormalization(mixed $data, string $type, string $format = null): bool
+    public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []): bool
     {
         return is_a($type, Enumerable::class, true) && $this->isValid($type, $data);
     }
@@ -48,5 +48,12 @@ final class EnumerableNormalizer implements NormalizerInterface, DenormalizerInt
         } catch (\OutOfBoundsException $e) {
             return false;
         }
+    }
+
+    public function getSupportedTypes(?string $format): array
+    {
+        return [
+            Enumerable::class => true,
+        ];
     }
 }

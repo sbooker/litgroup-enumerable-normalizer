@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd" bootstrap="vendor/autoload.php" beStrictAboutOutputDuringTests="true" beStrictAboutTestsThatDoNotTestAnything="false" cacheDirectory=".phpunit.cache" requireCoverageMetadata="false" beStrictAboutCoverageMetadata="false">
+  <testsuite name="default">
+    <directory suffix="Test.php">tests</directory>
+    <exclude>tests/Infrastructure</exclude>
+  </testsuite>
+  <source>
+    <include>
+      <directory suffix=".php">src</directory>
+    </include>
+  </source>
+</phpunit>

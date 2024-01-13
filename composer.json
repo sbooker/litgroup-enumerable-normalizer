@@ -7,11 +7,16 @@
   "require": {
     "php": "^8.0",
     "litgroup/enumerable": "^0.8",
-    "symfony/serializer": "^6.0"
+    "symfony/serializer": "^6.0|^7.0"
   },
   "autoload": {
     "psr-4": {
       "Sbooker\\LitGroupEnumerable\\Normalizer\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Sbooker\\LitGroupEnumerable\\Normalizer\\Tests\\": "tests/"
     }
   },
   "config": {
@@ -19,5 +24,8 @@
       "*": "dist"
     },
     "sort-packages": true
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.5"
   }
 }
